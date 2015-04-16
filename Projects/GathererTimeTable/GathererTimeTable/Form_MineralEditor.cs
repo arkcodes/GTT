@@ -19,17 +19,17 @@ namespace GathererTimeTable {
         }
 
         private void Form_Collection_Load(object sender,EventArgs e) {
-            CsvIO.loadCsvToDataTable(ref dataGridView1,"proto1.csv");
-            //dataGridView1.Rows.Add(false,"Mineral",1,"01:00","クルザス中央高地 (27, 19)","闇鉄鉱","3段目","");
+            CsvIO.loadCsvToDataTable(ref dataGridView1,"collection.csv");
 
         }
 
         private void buttonComplete_Click(object sender,EventArgs e) {
-            CsvIO.SaveDataTableToCsv(ref dataGridView1,"proto1.csv");
+            CsvIO.SaveDataTableToCsv(ref dataGridView1,"collection.csv");
+            Close();
         }
 
         private void buttonCancel_Click(object sender,EventArgs e) {
-
+            Close();
         }
 
 
