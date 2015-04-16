@@ -42,6 +42,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button8 = new System.Windows.Forms.Button();
+            this.labelDebug = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,11 +201,20 @@
             this.button8.TabIndex = 19;
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // labelDebug
+            // 
+            this.labelDebug.Location = new System.Drawing.Point(81, 10);
+            this.labelDebug.Name = "labelDebug";
+            this.labelDebug.Size = new System.Drawing.Size(78, 29);
+            this.labelDebug.TabIndex = 20;
+            this.labelDebug.Text = "デバッグ";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 216);
+            this.Controls.Add(this.labelDebug);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -247,5 +257,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label labelDebug;
     }
 }
