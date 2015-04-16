@@ -1,0 +1,10 @@
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe.config
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.pdb
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\ChreneLib(CustomTextBox).dll
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csprojResolveAssemblyReference.cache
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Main.resources
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Properties.Resources.resources
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csproj.GenerateResource.Cache
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.exe
+E:\ACLibrary\OneDrive\Development\Visual Studio\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
