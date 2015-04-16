@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ChreneLib%28CustomTextBox%29">
-      <HintPath>..\..\..\..\Library-C#\InputSupportSystem\ChreneLib(CustomTextBox).dll</HintPath>
+    <Reference Include="ChreneLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Library-C#\InputSupportSystem\ChreneLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -48,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_MineralEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MineralEditor.Designer.cs">
+      <DependentUpon>Form_MineralEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,10 +62,13 @@
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="FFXIV.Tool\Eorzea_Time.cs" />
-    <Compile Include="IO.Tool\ListViewToCSV.cs" />
+    <Compile Include="IO.Tool\CsvIO.cs" />
     <Compile Include="IO.Tool\Serializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_MineralEditor.resx">
+      <DependentUpon>Form_MineralEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>

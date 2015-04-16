@@ -19,5 +19,11 @@ namespace GathererTimeTable {
             labelTimeNow.Text = Eorzea_Time.GetTimeAsString();
         }
 
+        private void __buttonCollection_Click(object sender,System.EventArgs e) {
+            var formCollection = new Form_MineralEditor();
+            formCollection.ShowDialog(this);
+            formCollection.Dispose();
+        }
+
     }
 }
