@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="ChreneLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Library-C#\InputSupportSystem\ChreneLib.dll</HintPath>
+      <HintPath>bin\Debug\ChreneLib.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />

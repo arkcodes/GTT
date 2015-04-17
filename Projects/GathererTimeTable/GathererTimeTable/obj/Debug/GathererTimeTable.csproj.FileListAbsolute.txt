@@ -19,3 +19,13 @@ E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\Gather
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\ChreneLib.dll
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_MineralEditor.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe.config
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.pdb
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csprojResolveAssemblyReference.cache
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_MineralEditor.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Main.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Properties.Resources.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csproj.GenerateResource.Cache
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.exe
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
