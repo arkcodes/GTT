@@ -14,22 +14,26 @@ using GathererTimeTable.IO.Tool;
 
 namespace GathererTimeTable {
     public partial class Form_MineralEditor : Form {
-        public Form_MineralEditor() {
+        Form_Main __form_Main = new Form_Main();
+        DataTable dataTableMineral = new DataTable();
+        public Form_MineralEditor(Form_Main _Form_Main,DataTable _DataTableMineral) {
+            __form_Main = _Form_Main;
             InitializeComponent();
         }
 
         private void Form_Collection_Load(object sender,EventArgs e) {
-            CsvIO.loadCsvToDataTable(ref dataGridView1,"Collection.csv");
-            //dataGridView1.Rows.Add(false,"Mineral",1,"01:00","クルザス中央高地 (27, 19)","闇鉄鉱","3段目","");
+            CsvIO.loadCsvToDataTable(ref dataGridView1,"collection.csv");
 
         }
 
         private void buttonComplete_Click(object sender,EventArgs e) {
-            CsvIO.SaveDataTableToCsv(ref dataGridView1,"Collection.csv");
+            CsvIO.SaveDataTableToCsv(ref dataGridView1,"collection.csv");
+            dataTableMineral = (DataTable)dataGridView1.DataSource;
+            Close();
         }
 
         private void buttonCancel_Click(object sender,EventArgs e) {
-
+            Close();
         }
 
 
