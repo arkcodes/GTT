@@ -7,7 +7,7 @@ namespace GathererTimeTable {
         DataTable dataTableMineral = new DataTable();
         DataTable dataTablePlant = new DataTable();
         DataTable dataTableFish = new DataTable();
-        
+
         public Form_Main() {
             InitializeComponent();
         }
@@ -28,10 +28,11 @@ namespace GathererTimeTable {
             var formCollection = new Form_MineralEditor(this,dataTableMineral);
             formCollection.ShowDialog(this);
             formCollection.Dispose();
-            //デバッグ用
+#if DEBUG
             if(dataTableMineral != null) labelDebug.Text = "Mineral";
             if(dataTableMineral != null) labelDebug.Text = "Plant";
             if(dataTableMineral != null) labelDebug.Text = "Fish";
+#endif
         }
 
     }

@@ -25,19 +25,26 @@ namespace GathererTimeTable {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonComplete = new System.Windows.Forms.Button();
             this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new GathererTimeTable.DataSet.DataSet();
+            this.dataTableMineralBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.column1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.column2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableMineralBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -45,16 +52,18 @@ namespace GathererTimeTable {
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
+            this.column1DataGridViewCheckBoxColumn,
+            this.column2DataGridViewTextBoxColumn,
+            this.column3DataGridViewTextBoxColumn,
+            this.column4DataGridViewTextBoxColumn,
+            this.column5DataGridViewTextBoxColumn,
+            this.column6DataGridViewTextBoxColumn,
+            this.column7DataGridViewTextBoxColumn,
+            this.column8DataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.dataTableMineralBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -63,72 +72,6 @@ namespace GathererTimeTable {
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(784, 490);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "有効/無効";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "カテゴリー";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "処理用時刻";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "採集時刻";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 78;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.Frozen = true;
-            this.Column5.HeaderText = "採集場所";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 78;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.Frozen = true;
-            this.Column6.HeaderText = "採集物";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 66;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.Frozen = true;
-            this.Column7.HeaderText = "採集段数";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 78;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "メモ書き";
-            this.Column8.Name = "Column8";
-            this.Column8.ToolTipText = "スキル回し等のメモにお使いください";
             // 
             // buttonCancel
             // 
@@ -163,6 +106,69 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
+            // dataSetBindingSource
+            // 
+            this.dataSetBindingSource.DataSource = this.dataSet;
+            this.dataSetBindingSource.Position = 0;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTableMineralBindingSource
+            // 
+            this.dataTableMineralBindingSource.DataMember = "DataTableMineral";
+            this.dataTableMineralBindingSource.DataSource = this.dataSetBindingSource;
+            // 
+            // column1DataGridViewCheckBoxColumn
+            // 
+            this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
+            this.column1DataGridViewCheckBoxColumn.HeaderText = "Column1";
+            this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
+            // 
+            // column2DataGridViewTextBoxColumn
+            // 
+            this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
+            this.column2DataGridViewTextBoxColumn.HeaderText = "Column2";
+            this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
+            // 
+            // column3DataGridViewTextBoxColumn
+            // 
+            this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
+            this.column3DataGridViewTextBoxColumn.HeaderText = "Column3";
+            this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
+            // 
+            // column4DataGridViewTextBoxColumn
+            // 
+            this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
+            this.column4DataGridViewTextBoxColumn.HeaderText = "Column4";
+            this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
+            // 
+            // column5DataGridViewTextBoxColumn
+            // 
+            this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
+            this.column5DataGridViewTextBoxColumn.HeaderText = "Column5";
+            this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
+            // 
+            // column6DataGridViewTextBoxColumn
+            // 
+            this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
+            this.column6DataGridViewTextBoxColumn.HeaderText = "Column6";
+            this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
+            // 
+            // column7DataGridViewTextBoxColumn
+            // 
+            this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
+            this.column7DataGridViewTextBoxColumn.HeaderText = "Column7";
+            this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
+            // 
+            // column8DataGridViewTextBoxColumn
+            // 
+            this.column8DataGridViewTextBoxColumn.DataPropertyName = "Column8";
+            this.column8DataGridViewTextBoxColumn.HeaderText = "Column8";
+            this.column8DataGridViewTextBoxColumn.Name = "column8DataGridViewTextBoxColumn";
+            // 
             // Form_MineralEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -176,6 +182,9 @@ namespace GathererTimeTable {
             this.Text = "Form_MineralEditor";
             this.Load += new System.EventHandler(this.Form_Collection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableMineralBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,14 +195,17 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private CTextBox cTextBox_Filter;
+        private System.Windows.Forms.BindingSource dataSetBindingSource;
+        private DataSet.DataSet dataSet;
+        private System.Windows.Forms.BindingSource dataTableMineralBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column6DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column7DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn column8DataGridViewTextBoxColumn;
     }
 }

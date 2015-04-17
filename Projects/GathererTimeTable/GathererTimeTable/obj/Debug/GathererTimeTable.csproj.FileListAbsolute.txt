@@ -17,7 +17,6 @@ E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\Gather
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csproj.GenerateResource.Cache
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.exe
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
-E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\ChreneLib.dll
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_MineralEditor.resources
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe.config
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe
