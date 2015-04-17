@@ -42,21 +42,54 @@ namespace GathererTimeTable.IO.Tool {
         }
 
         public static void loadCsvToDataTable(DataGridView dataGridView1,string _FileName) {
-            TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"));
-            parser.TextFieldType = FieldType.Delimited;
-            parser.SetDelimiters(","); // 区切り文字はコンマ
-            //""コメント内のコンマは無視する
-            parser.HasFieldsEnclosedInQuotes = true;
+            using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(","); // 区切り文字はコンマ
+                //""コメント内のコンマは無視する
+                parser.HasFieldsEnclosedInQuotes = true;
 
-            // データをすべてクリア
-            dataGridView1.Rows.Clear();
-            //
-            while(!parser.EndOfData) {
-                string[] row = parser.ReadFields(); // 1行読み込み
-                // 読み込んだデータ(1行をDataGridViewに表示する)
-                dataGridView1.Rows.Add(row);
+                // データをすべてクリア
+                dataGridView1.Rows.Clear();
+                //
+                while(!parser.EndOfData) {
+                    string[] row = parser.ReadFields(); // 1行読み込み
+                    // 読み込んだデータ(1行をDataGridViewに表示する)
+                    dataGridView1.Rows.Add(row);
+                }
             }
         }
 
+        public static void SearchCollectCsvtoList(string _TimeString,string _FileName,ref List<string> LBCT,ref List<string> LLCT) {
+            try {
+                // 第１パラメータで指定されたシフトJISコードのファイルを開く
+                using(StreamReader sr = new StreamReader(_FileName,System.Text.Encoding.GetEncoding("shift_jis"))) {
+                    string line;
+                    string[] ColumnMineral = new string[8] { "","","","","","","","" };
+                    // １行ずつ読み込み
+                    while((line = sr.ReadLine()) != null) {
+                        // 行を「,」で分割
+                        string[] param = line.Split(',');
+                        // 「"」を除去して構造体に格納
+                        for(int i = 0;i < 8;i++) {
+                            ColumnMineral[i] = (param[i].Split('"'))[1];
+                        }
+
+                        // 第２パラメータで指定されたコード番号を判定
+                        if(ColumnMineral[0] == "True" && ColumnMineral[3] == _TimeString) {
+                            LBCT.Add(ColumnMineral[5]);
+                            string __labelText = string.Join(" , ",new string[] { ColumnMineral[4],
+                                                                                  ColumnMineral[6] + "\r\n",
+                                                                                  ColumnMineral[7]});
+                            LLCT.Add(__labelText);
+
+                        }
+                    }
+                }
+            }
+            catch(FileNotFoundException e) {
+                GathererTimeTable.Program.ShowError(e,"FileNotFound");
+            }
+
+        }
     }
 }

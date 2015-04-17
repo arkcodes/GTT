@@ -29,7 +29,7 @@ namespace GathererTimeTable {
             ShowError(e.Exception,"ThreadException");
         }
 
-        static void ShowError(Exception ex,string title) {
+        public static void ShowError(Exception ex,string title) {
             MessageBox.Show("プログラム中で補足されなかったエラーが発生しました。詳細はエラーログをごらん下さい。",title);
 
             StreamWriter stream = new StreamWriter("error.txt",true);

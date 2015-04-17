@@ -15,8 +15,7 @@ using GathererTimeTable.IO.Tool;
 namespace GathererTimeTable {
     public partial class Form_MineralEditor : Form {
         Form_Main __form_Main = new Form_Main();
-        DataTable dataTableMineral = new DataTable();
-        public Form_MineralEditor(Form_Main _Form_Main,DataTable _DataTableMineral) {
+        public Form_MineralEditor(Form_Main _Form_Main) {
             __form_Main = _Form_Main;
             InitializeComponent();
         }
@@ -28,7 +27,6 @@ namespace GathererTimeTable {
 
         private void buttonComplete_Click(object sender,EventArgs e) {
             CsvIO.SaveDataTableToCsv(dataGridView1,"collection.csv");
-            dataTableMineral = (DataTable)dataGridView1.DataSource;
             Close();
         }
 
