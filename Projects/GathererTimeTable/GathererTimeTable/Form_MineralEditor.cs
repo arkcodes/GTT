@@ -22,12 +22,12 @@ namespace GathererTimeTable {
         }
 
         private void Form_Collection_Load(object sender,EventArgs e) {
-            CsvIO.loadCsvToDataTable(ref dataGridView1,"collection.csv");
+            CsvIO.loadCsvToDataTable(dataGridView1,"collection.csv");
 
         }
 
         private void buttonComplete_Click(object sender,EventArgs e) {
-            CsvIO.SaveDataTableToCsv(ref dataGridView1,"collection.csv");
+            CsvIO.SaveDataTableToCsv(dataGridView1,"collection.csv");
             dataTableMineral = (DataTable)dataGridView1.DataSource;
             Close();
         }

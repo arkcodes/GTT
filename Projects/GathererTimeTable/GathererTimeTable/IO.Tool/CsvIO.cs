@@ -11,7 +11,7 @@ namespace GathererTimeTable.IO.Tool {
 
         }
 
-        public static void SaveDataTableToCsv(ref DataGridView dataGridView1,string _FileName) {
+        public static void SaveDataTableToCsv(DataGridView dataGridView1,string _FileName) {
             // 保存用のファイルを開く
             using(StreamWriter writer = new StreamWriter(_FileName,false,Encoding.GetEncoding("shift_jis"))) {
 
@@ -41,7 +41,7 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void loadCsvToDataTable(ref DataGridView dataGridView1,string _FileName) {
+        public static void loadCsvToDataTable(DataGridView dataGridView1,string _FileName) {
             TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"));
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -50,7 +50,7 @@ namespace GathererTimeTable.IO.Tool {
 
             // データをすべてクリア
             dataGridView1.Rows.Clear();
-
+            //
             while(!parser.EndOfData) {
                 string[] row = parser.ReadFields(); // 1行読み込み
                 // 読み込んだデータ(1行をDataGridViewに表示する)
