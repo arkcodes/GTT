@@ -30,8 +30,8 @@ namespace GathererTimeTable {
             formCollection.Dispose();
             //デバッグ用
             if(dataTableMineral != null) labelDebug.Text = "Mineral";
-            if(dataTableMineral != null) labelDebug.Text = "Plant";
-            if(dataTableMineral != null) labelDebug.Text = "Fish";
+            if(dataTablePlant != null) labelDebug.Text = "Plant";
+            if(dataTableFish != null) labelDebug.Text = "Fish";
         }
 
     }
