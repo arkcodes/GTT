@@ -30,8 +30,8 @@ namespace GathererTimeTable {
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonComplete = new System.Windows.Forms.Button();
             this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new GathererTimeTable.DataSet.DataSet();
+            this.dataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTableMineralBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.column1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.column2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +42,8 @@ namespace GathererTimeTable {
             this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column8DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableMineralBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,6 @@ namespace GathererTimeTable {
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.column1DataGridViewCheckBoxColumn,
@@ -63,7 +62,6 @@ namespace GathererTimeTable {
             this.column6DataGridViewTextBoxColumn,
             this.column7DataGridViewTextBoxColumn,
             this.column8DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dataTableMineralBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
@@ -106,15 +104,15 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
-            // dataSetBindingSource
-            // 
-            this.dataSetBindingSource.DataSource = this.dataSet;
-            this.dataSetBindingSource.Position = 0;
-            // 
             // dataSet
             // 
             this.dataSet.DataSetName = "DataSet";
             this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetBindingSource
+            // 
+            this.dataSetBindingSource.DataSource = this.dataSet;
+            this.dataSetBindingSource.Position = 0;
             // 
             // dataTableMineralBindingSource
             // 
@@ -124,8 +122,9 @@ namespace GathererTimeTable {
             // column1DataGridViewCheckBoxColumn
             // 
             this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
-            this.column1DataGridViewCheckBoxColumn.HeaderText = "Column1";
+            this.column1DataGridViewCheckBoxColumn.HeaderText = "有効/無効";
             this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
+            this.column1DataGridViewCheckBoxColumn.Width = 90;
             // 
             // column2DataGridViewTextBoxColumn
             // 
@@ -182,8 +181,8 @@ namespace GathererTimeTable {
             this.Text = "Form_MineralEditor";
             this.Load += new System.EventHandler(this.Form_Collection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTableMineralBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,8 +195,8 @@ namespace GathererTimeTable {
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
         private CTextBox cTextBox_Filter;
-        private System.Windows.Forms.BindingSource dataSetBindingSource;
         private DataSet.DataSet dataSet;
+        private System.Windows.Forms.BindingSource dataSetBindingSource;
         private System.Windows.Forms.BindingSource dataTableMineralBindingSource;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
