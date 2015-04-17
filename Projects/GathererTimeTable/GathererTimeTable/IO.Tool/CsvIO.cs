@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.OleDb;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
-using System.Data;
 
 namespace GathererTimeTable.IO.Tool {
     class CsvIO {
@@ -14,7 +11,7 @@ namespace GathererTimeTable.IO.Tool {
 
         }
 
-        public static void SaveDataGridViewToCsv(ref DataGridView dataGridView1,string _FileName) {
+        public static void SaveDataTableToCsv(DataGridView dataGridView1,string _FileName) {
             // 保存用のファイルを開く
             using(StreamWriter writer = new StreamWriter(_FileName,false,Encoding.GetEncoding("shift_jis"))) {
 
@@ -44,7 +41,7 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void loadCsvToDataGridView(ref DataGridView dataGridView1,string _FileName) {
+        public static void loadCsvToDataTable(DataGridView dataGridView1,string _FileName) {
             TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"));
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -53,34 +50,13 @@ namespace GathererTimeTable.IO.Tool {
 
             // データをすべてクリア
             dataGridView1.Rows.Clear();
-
+            //
             while(!parser.EndOfData) {
                 string[] row = parser.ReadFields(); // 1行読み込み
                 // 読み込んだデータ(1行をDataGridViewに表示する)
                 dataGridView1.Rows.Add(row);
-
-
             }
         }
-        public static DataTable loadCsvToDataTable(System.Data.DataSet _DataSet,string _FileName) {
-            String filename = System.IO.Directory.GetCurrentDirectory() + "\\Collection.csv"; // ファイルパス
 
-            // データベースへ接続する(今回はCSVファイルを開く)
-            OleDbConnection connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" + Path.GetDirectoryName(filename) + "\\; Extended Properties=\"Text;HDR=YES;FMT=Delimited\"");
-
-            // クエリ文字列を作る
-            // ※ファイルパスを[]でくくること！
-            OleDbCommand command = new OleDbCommand("SELECT * FROM [" + Path.GetFileName(filename) + "]",connection);
-
-            System.Data.DataSet dataset = _DataSet;
-            //dataset.Clear();    // 念のためクリア
-
-            // CSVファイルの内容をDataSetに入れる
-            OleDbDataAdapter adapter = new OleDbDataAdapter(command);
-            adapter.Fill(dataset);
-
-            return dataset.Tables[0];
-
-        }
     }
 }
