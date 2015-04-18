@@ -71,5 +71,10 @@ namespace GathererTimeTable {
 
         }
 
+        private void checkBox1_CheckedChanged(object sender,System.EventArgs e) {
+            CheckBox cb = (CheckBox)sender;
+            this.TopMost = cb.Checked ? true : false;
+        }
+
     }
 }

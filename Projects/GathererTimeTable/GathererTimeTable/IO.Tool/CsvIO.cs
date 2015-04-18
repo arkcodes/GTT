@@ -69,10 +69,9 @@ namespace GathererTimeTable.IO.Tool {
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
                     if(row[0] == "True" && row[3] == _TimeString) {
-                        LBCT.Add(row[5]);
-                        string __labelText = string.Join(" , ",new string[] { row[4],
-                                                                              row[6] + "\r\n"});
-                        LLCT.Add(__labelText + row[7]);
+                        LBCT.Add(row[4]);
+                        string __labelText = row[5] + " , " + row[6] + "\r\n" + row[7];
+                        LLCT.Add(__labelText);
 
                     }
                 }
