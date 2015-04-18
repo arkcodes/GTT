@@ -129,43 +129,54 @@ namespace GathererTimeTable {
             // column2DataGridViewTextBoxColumn
             // 
             this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
-            this.column2DataGridViewTextBoxColumn.HeaderText = "Column2";
+            this.column2DataGridViewTextBoxColumn.HeaderText = "Type";
             this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
+            this.column2DataGridViewTextBoxColumn.Visible = false;
             // 
             // column3DataGridViewTextBoxColumn
             // 
             this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
-            this.column3DataGridViewTextBoxColumn.HeaderText = "Column3";
+            this.column3DataGridViewTextBoxColumn.HeaderText = "IntTime";
             this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
+            this.column3DataGridViewTextBoxColumn.Visible = false;
             // 
             // column4DataGridViewTextBoxColumn
             // 
+            this.column4DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
-            this.column4DataGridViewTextBoxColumn.HeaderText = "Column4";
+            this.column4DataGridViewTextBoxColumn.HeaderText = "アラーム時刻";
             this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
+            this.column4DataGridViewTextBoxColumn.Width = 91;
             // 
             // column5DataGridViewTextBoxColumn
             // 
+            this.column5DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
-            this.column5DataGridViewTextBoxColumn.HeaderText = "Column5";
+            this.column5DataGridViewTextBoxColumn.HeaderText = "採集場所";
             this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
+            this.column5DataGridViewTextBoxColumn.Width = 78;
             // 
             // column6DataGridViewTextBoxColumn
             // 
+            this.column6DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
-            this.column6DataGridViewTextBoxColumn.HeaderText = "Column6";
+            this.column6DataGridViewTextBoxColumn.HeaderText = "採集物";
             this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
+            this.column6DataGridViewTextBoxColumn.Width = 66;
             // 
             // column7DataGridViewTextBoxColumn
             // 
+            this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
-            this.column7DataGridViewTextBoxColumn.HeaderText = "Column7";
+            this.column7DataGridViewTextBoxColumn.HeaderText = "採集段数";
             this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
+            this.column7DataGridViewTextBoxColumn.Width = 78;
             // 
             // column8DataGridViewTextBoxColumn
             // 
+            this.column8DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.column8DataGridViewTextBoxColumn.DataPropertyName = "Column8";
-            this.column8DataGridViewTextBoxColumn.HeaderText = "Column8";
+            this.column8DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
             this.column8DataGridViewTextBoxColumn.Name = "column8DataGridViewTextBoxColumn";
             // 
             // Form_MineralEditor
