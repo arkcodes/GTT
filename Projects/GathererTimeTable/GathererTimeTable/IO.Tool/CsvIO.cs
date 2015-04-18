@@ -59,40 +59,24 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void SearchCollectionCsvtoList(string _TimeString,string _FileName,ref List<string> LBCT,ref List<string> LLCT) {
-            try {
-                // 第１パラメータで指定されたシフトJISコードのファイルを開く
-                using(StreamReader sr = new StreamReader(_FileName,System.Text.Encoding.GetEncoding("shift_jis"))) {
-                    using(StreamWriter writer = new StreamWriter("convC.csv",false,Encoding.GetEncoding("shift_jis"))) {
-                        string line;
-                        string[] ColumnMineral = new string[8] { "","","","","","","","" };
-                        // １行ずつ読み込み
-                        while((line = sr.ReadLine()) != null) {
-                            // 行を「,」で分割
-                            string[] param = line.Split(',');
-                            // 「"」を除去して構造体に格納
-                            for(int i = 0;i < 8;i++) {
-                                ColumnMineral[i] = (param[i].Split('"'))[1];
-                            }
-                            var List = new List<string>() { ColumnMineral[0],ColumnMineral[1],ColumnMineral[2],ColumnMineral[3],ColumnMineral[5],ColumnMineral[4],ColumnMineral[6],ColumnMineral[7] };
-                            string str = string.Join(",",List);
-                            writer.WriteLine(str);
-                            // 第２パラメータで指定されたコード番号を判定
-                            if(ColumnMineral[0] == "True" && ColumnMineral[3] == _TimeString) {
-                                LBCT.Add(ColumnMineral[5]);
-                                string __labelText = string.Join(" , ",new string[] { ColumnMineral[4],
-                                                                                      ColumnMineral[6] + "\r\n"});
-                                LLCT.Add(__labelText + ColumnMineral[7]);
+        public static void loadCsvToControl(string _TimeString,string _FileName,ref List<string> LBCT,ref List<string> LLCT) {
+            using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
+                parser.TextFieldType = FieldType.Delimited;
+                parser.SetDelimiters(","); // 区切り文字はコンマ
+                //""コメント内のコンマは無視する
+                parser.HasFieldsEnclosedInQuotes = true;
 
-                            }
-                        }
+                while(!parser.EndOfData) {
+                    string[] row = parser.ReadFields(); // 1行読み込み
+                    if(row[0] == "True" && row[3] == _TimeString) {
+                        LBCT.Add(row[5]);
+                        string __labelText = string.Join(" , ",new string[] { row[4],
+                                                                              row[6] + "\r\n"});
+                        LLCT.Add(__labelText + row[7]);
+
                     }
                 }
             }
-            catch(FileNotFoundException e) {
-                GathererTimeTable.Program.ShowError(e,"FileNotFound");
-            }
-
         }
     }
 }
