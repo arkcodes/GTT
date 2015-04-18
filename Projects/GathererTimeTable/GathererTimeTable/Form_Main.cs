@@ -34,7 +34,7 @@ namespace GathererTimeTable {
                 ListButtonCollectText.Clear();
                 ListLabelCollectText.Clear();
                 int i = 0;
-                CsvIO.SearchCollectCsvtoList(__eTime,"Collection.csv",ref ListButtonCollectText,ref ListLabelCollectText);
+                CsvIO.SearchCollectionCsvtoList(__eTime,"Collection.csv",ref ListButtonCollectText,ref ListLabelCollectText);
                 foreach(var s in ListButtonCollectText.Select((value,index) => new { value,index })) {
                     this.Controls["button" + (s.index + 1)].Enabled = true;
                     this.Controls["button" + (s.index + 1)].Text = s.value;

@@ -59,7 +59,7 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void SearchCollectCsvtoList(string _TimeString,string _FileName,ref List<string> LBCT,ref List<string> LLCT) {
+        public static void SearchCollectionCsvtoList(string _TimeString,string _FileName,ref List<string> LBCT,ref List<string> LLCT) {
             try {
                 // 第１パラメータで指定されたシフトJISコードのファイルを開く
                 using(StreamReader sr = new StreamReader(_FileName,System.Text.Encoding.GetEncoding("shift_jis"))) {
@@ -81,7 +81,7 @@ namespace GathererTimeTable.IO.Tool {
                             if(ColumnMineral[0] == "True" && ColumnMineral[3] == _TimeString) {
                                 LBCT.Add(ColumnMineral[5]);
                                 string __labelText = string.Join(" , ",new string[] { ColumnMineral[4],
-                                                                                  ColumnMineral[6] + "\r\n"});
+                                                                                      ColumnMineral[6] + "\r\n"});
                                 LLCT.Add(__labelText + ColumnMineral[7]);
 
                             }
