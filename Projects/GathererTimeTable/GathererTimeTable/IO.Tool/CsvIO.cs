@@ -78,9 +78,8 @@ namespace GathererTimeTable.IO.Tool {
                         if(ColumnMineral[0] == "True" && ColumnMineral[3] == _TimeString) {
                             LBCT.Add(ColumnMineral[5]);
                             string __labelText = string.Join(" , ",new string[] { ColumnMineral[4],
-                                                                                  ColumnMineral[6] + "\r\n",
-                                                                                  ColumnMineral[7]});
-                            LLCT.Add(__labelText);
+                                                                                  ColumnMineral[6] + "\r\n"});
+                            LLCT.Add(__labelText + ColumnMineral[7]);
 
                         }
                     }

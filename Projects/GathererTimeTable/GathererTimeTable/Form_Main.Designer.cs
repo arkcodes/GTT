@@ -88,6 +88,7 @@
             // button2
             // 
             this.button2.Enabled = false;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(9, 82);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 32);
@@ -101,6 +102,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 32);
             this.button3.TabIndex = 9;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -110,6 +112,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 32);
             this.button4.TabIndex = 10;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label1
