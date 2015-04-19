@@ -7,26 +7,26 @@
         /// <summary>
         /// xml形式でインスタンスを保存する
         /// </summary>
-        /// <param name="__item">保存するインスタンスを保持している型変数</param>
-        /// <param name="__fileName">保存する際のファイル名を表す文字列</param>
-        public void saveSettings(T __item,string __fileName) {
+        /// <param name="_item">保存するインスタンスを保持している型変数</param>
+        /// <param name="_fileName">保存する際のファイル名を表す文字列</param>
+        public void saveSettings(T _item,string _fileName) {
             //保存するファイルのパスを、カレントディレクトリ＋ファイルネームとして取得
-            string filePath = __fileName;
+            string filePath = _fileName;
             //型変数を基準としたシリアライザを作成
-            var serializer = new System.Xml.Serialization.XmlSerializer(__item.GetType());
+            var serializer = new System.Xml.Serialization.XmlSerializer(_item.GetType());
             var sw = new System.IO.StreamWriter(filePath,false,new System.Text.UTF8Encoding(false));
             //書き込みを行う
-            serializer.Serialize(sw,__item);
+            serializer.Serialize(sw,_item);
             sw.Close();
         }
 
         /// <summary>
         /// を実行する・取得する
         /// </summary>
-        /// <param name="__fileName">読み込み対象のファイル名を表す文字列</param>
+        /// <param name="_fileName">読み込み対象のファイル名を表す文字列</param>
         /// <returns></returns>
-        public T loadSettings(string __fileName) {
-            string filePath = __fileName;
+        public T loadSettings(string _fileName) {
+            string filePath = _fileName;
             //XmlSerializerオブジェクトを作成
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
             //読み込むファイルを開く

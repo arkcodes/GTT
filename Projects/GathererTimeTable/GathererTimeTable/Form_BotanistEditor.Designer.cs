@@ -1,7 +1,7 @@
 ﻿using ChreneLib.Controls.TextBoxes;
 
 namespace GathererTimeTable {
-    partial class Form_MineralEditor {
+    partial class Form_BotanistEditor {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -156,7 +156,7 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
-            // Form_MineralEditor
+            // Form_BotanistEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,7 +165,7 @@ namespace GathererTimeTable {
             this.Controls.Add(this.buttonComplete);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form_MineralEditor";
+            this.Name = "Form_BotanistEditor";
             this.Text = "Form_MineralEditor";
             this.Load += new System.EventHandler(this.Form_Collection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

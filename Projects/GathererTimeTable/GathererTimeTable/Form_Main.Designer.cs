@@ -93,11 +93,13 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 32);
             this.button2.TabIndex = 8;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Enabled = false;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(9, 120);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 32);
@@ -108,6 +110,7 @@
             // button4
             // 
             this.button4.Enabled = false;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(9, 158);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 32);
@@ -183,7 +186,7 @@
             this.button6.Size = new System.Drawing.Size(30, 30);
             this.button6.TabIndex = 17;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.@__buttonCollection_Click);
+            this.button6.Click += new System.EventHandler(this._buttonMiner_Click);
             // 
             // button7
             // 
@@ -193,6 +196,7 @@
             this.button7.Size = new System.Drawing.Size(30, 30);
             this.button7.TabIndex = 18;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this._buttonBotanist_Click);
             // 
             // button8
             // 

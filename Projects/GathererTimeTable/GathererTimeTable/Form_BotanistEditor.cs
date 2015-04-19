@@ -13,20 +13,20 @@ using GathererTimeTable.IO.Tool;
 
 
 namespace GathererTimeTable {
-    public partial class Form_MineralEditor : Form {
+    public partial class Form_BotanistEditor : Form {
         Form_Main _form_Main = new Form_Main();
-        public Form_MineralEditor(Form_Main _Form_Main) {
+        public Form_BotanistEditor(Form_Main _Form_Main) {
             _form_Main = _Form_Main;
             InitializeComponent();
         }
 
         private void Form_Collection_Load(object sender,EventArgs e) {
-            CsvIO.loadCSVToDataGridView(dataGridView1,"MinerCollection.csv");
+            CsvIO.loadCSVToDataGridView(dataGridView1,"BotanistCollection.csv");
 
         }
 
         private void buttonComplete_Click(object sender,EventArgs e) {
-            CsvIO.SaveDataTableToCSV(dataGridView1,"MinerCollection.csv");
+            CsvIO.SaveDataTableToCSV(dataGridView1,"BotanistCollection.csv");
             Close();
         }
 

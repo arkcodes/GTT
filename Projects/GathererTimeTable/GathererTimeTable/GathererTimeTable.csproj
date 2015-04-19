@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_BotanistEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BotanistEditor.Designer.cs">
+      <DependentUpon>Form_BotanistEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_MineralEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="IO.Tool\Serializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_BotanistEditor.resx">
+      <DependentUpon>Form_BotanistEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_MineralEditor.resx">
       <DependentUpon>Form_MineralEditor.cs</DependentUpon>
     </EmbeddedResource>
