@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("GathererTimeTable")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("例のアレです")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GathererTimeTable")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright ©  2015 しんかいちゃん")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
