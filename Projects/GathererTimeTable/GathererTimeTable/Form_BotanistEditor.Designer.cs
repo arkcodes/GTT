@@ -151,6 +151,7 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.Name = "cTextBox_Filter";
             this.cTextBox_Filter.Size = new System.Drawing.Size(508, 19);
             this.cTextBox_Filter.TabIndex = 3;
+            this.cTextBox_Filter.Visible = false;
             this.cTextBox_Filter.WaterMark = "検索フィルター";
             this.cTextBox_Filter.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -166,6 +167,8 @@ namespace GathererTimeTable {
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form_BotanistEditor";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Form_MineralEditor";
             this.Load += new System.EventHandler(this.Form_Collection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -179,7 +182,6 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
-        private CTextBox cTextBox_Filter;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3DataGridViewTextBoxColumn;
@@ -188,5 +190,6 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridViewTextBoxColumn column6DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column7DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column8DataGridViewTextBoxColumn;
+        private CTextBox cTextBox_Filter;
     }
 }

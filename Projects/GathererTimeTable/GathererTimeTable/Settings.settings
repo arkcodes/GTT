@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="AlarmType" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"None","SystemSound","UserDefinition"</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SoundFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

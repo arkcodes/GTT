@@ -36,13 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.labelDebug = new System.Windows.Forms.Label();
+            this.checkBoxMute = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,27 +152,27 @@
             this.label4.Size = new System.Drawing.Size(183, 32);
             this.label4.TabIndex = 14;
             // 
-            // checkBox1
+            // checkBoxAlwaysOnTop
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 196);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 16);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "AlwaysOnTop";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBoxAlwaysOnTop.AutoSize = true;
+            this.checkBoxAlwaysOnTop.Location = new System.Drawing.Point(9, 196);
+            this.checkBoxAlwaysOnTop.Name = "checkBoxAlwaysOnTop";
+            this.checkBoxAlwaysOnTop.Size = new System.Drawing.Size(94, 16);
+            this.checkBoxAlwaysOnTop.TabIndex = 15;
+            this.checkBoxAlwaysOnTop.Text = "AlwaysOnTop";
+            this.checkBoxAlwaysOnTop.UseVisualStyleBackColor = true;
+            this.checkBoxAlwaysOnTop.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button5
             // 
             this.button5.ImageIndex = 0;
             this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(296, 193);
+            this.button5.Location = new System.Drawing.Point(299, 191);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 23);
             this.button5.TabIndex = 16;
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.buttonOption_Click);
             // 
             // imageList1
             // 
@@ -216,17 +217,29 @@
             this.labelDebug.TabIndex = 20;
             this.labelDebug.Text = "デバッグ";
             // 
+            // checkBoxMute
+            // 
+            this.checkBoxMute.AutoSize = true;
+            this.checkBoxMute.Location = new System.Drawing.Point(101, 196);
+            this.checkBoxMute.Name = "checkBoxMute";
+            this.checkBoxMute.Size = new System.Drawing.Size(49, 16);
+            this.checkBoxMute.TabIndex = 21;
+            this.checkBoxMute.Text = "Mute";
+            this.checkBoxMute.UseVisualStyleBackColor = true;
+            this.checkBoxMute.CheckedChanged += new System.EventHandler(this._checkBoxMute_CheckedChanged);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 216);
+            this.Controls.Add(this.checkBoxMute);
             this.Controls.Add(this.labelDebug);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxAlwaysOnTop);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -236,8 +249,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main";
-            this.Text = "Form_Main";
+            this.Text = "GathererTimeTable";
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -258,12 +272,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxAlwaysOnTop;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label labelDebug;
+        private System.Windows.Forms.CheckBox checkBoxMute;
     }
 }

@@ -31,3 +31,4 @@ C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTabl
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_BotanistEditor.resources
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_BotanistEditor.resources
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Option.resources
+E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Option.resources

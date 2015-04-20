@@ -22,6 +22,7 @@ namespace GathererTimeTable {
                     this._radioButton_SoundType1.Checked = true;
                     break;
                 case "SystemSound":
+
                     this._radioButton_SoundType2.Checked = true;
                     break;
                 case "UserDefinition":
