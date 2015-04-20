@@ -29,3 +29,5 @@ C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTabl
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.exe
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_BotanistEditor.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_BotanistEditor.resources
+C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Option.resources

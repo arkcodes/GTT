@@ -63,7 +63,7 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void loadCSVToControl(string _TimeString,string _FileName,List<string> _LBCT,List<string> _LLCT,HashSet<string> _IsTimeSet) {
+        public static void loadCSVToControlList(string _TimeString,string _FileName,List<string> _LBCT,List<string> _LLCT,HashSet<string> _IsTimeSet) {
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ

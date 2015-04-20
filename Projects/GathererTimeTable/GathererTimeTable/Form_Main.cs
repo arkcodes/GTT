@@ -8,37 +8,35 @@ using GathererTimeTable.IO.Tool;
 
 namespace GathererTimeTable {
     public partial class Form_Main : Form {
-        private int _count;
-        public int Count {
-            get { return _count; }
-            set { _count = value; }
-        }
-        HashSet<string> _isMinerTimeSet = new HashSet<string>();
-        HashSet<string> _isBotanistTimeSet = new HashSet<string>();
+        public bool FlagAlarmInitialAttempt { get ; set; }  
+        HashSet<string> _minerTimeSet = new HashSet<string>();
+        HashSet<string> _botanistTimeSet = new HashSet<string>();
 
         List<string> _listButtonText = new List<string>();
         List<string> _listLabelText = new List<string>();
 
         public Form_Main() {
             InitializeComponent();
+            FlagAlarmInitialAttempt = true;
         }
 
         private void Form_Main_Load(object sender,System.EventArgs e) {
             labelTimeNow.Text = Eorzea_Time.GetTimeAsString();
-            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_isMinerTimeSet);
-            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_isBotanistTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_minerTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_botanistTimeSet);
 
         }
         private void timerSec_Tick(object sender,System.EventArgs e) {
 
             string _eTime = Eorzea_Time.GetTimeAsString();
             labelTimeNow.Text = _eTime;
-            if(_eTime.Substring(3,2) == "00" && Count == 0 && (_isMinerTimeSet.Contains(_eTime) || _isBotanistTimeSet.Contains(_eTime))) {
+            //その時間での初回実行確認、採掘師及び園芸師でのリストにアイテム登録があるかどうかの確認
+            if(FlagAlarmInitialAttempt && (_minerTimeSet.Contains(_eTime) || _botanistTimeSet.Contains(_eTime))) {
                 _listButtonText.Clear();
                 _listLabelText.Clear();
                 int i = 0;
-                CsvIO.loadCSVToControl(_eTime,"MinerCollection.csv",_listButtonText,_listLabelText,_isMinerTimeSet);
-                CsvIO.loadCSVToControl(_eTime,"BotanistCollection.csv",_listButtonText,_listLabelText,_isBotanistTimeSet);
+                CsvIO.loadCSVToControlList(_eTime,"MinerCollection.csv",_listButtonText,_listLabelText,_minerTimeSet);
+                CsvIO.loadCSVToControlList(_eTime,"BotanistCollection.csv",_listButtonText,_listLabelText,_botanistTimeSet);
 
                 foreach(var s in _listButtonText.Select((value,index) => new { value,index })) {
                     if(s.index < 4) {
@@ -62,11 +60,11 @@ namespace GathererTimeTable {
                     this.Controls["label" + j].ResetText();
                     this.Controls["button" + j].Enabled = false;
                 }
-                Count++;
+                if(FlagAlarmInitialAttempt) FlagAlarmInitialAttempt = !FlagAlarmInitialAttempt;
             }
-
-            if(_eTime.Substring(3,2) == "01") {
-                Count = 0;
+            //エオルゼア時間がo'clock以外の時はアラームフラグを起こし直す
+            if(_eTime.Substring(3,2) != "00") {
+                FlagAlarmInitialAttempt = true;
             }
         }
 
@@ -75,18 +73,24 @@ namespace GathererTimeTable {
             var formMinerEditor = new Form_MineralEditor(this);
             formMinerEditor.ShowDialog(this);
             formMinerEditor.Dispose();
-            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_isMinerTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_minerTimeSet);
         }
         private void _buttonBotanist_Click(object sender,System.EventArgs e) {
             var formBotanistEditor = new Form_BotanistEditor(this);
             formBotanistEditor.ShowDialog(this);
             formBotanistEditor.Dispose();
-            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_isBotanistTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_botanistTimeSet);
         }
 
         private void checkBox1_CheckedChanged(object sender,System.EventArgs e) {
             CheckBox cb = (CheckBox)sender;
             this.TopMost = cb.Checked ? true : false;
+        }
+
+        private void button5_Click(object sender,EventArgs e) {
+            Form_Option form_Option = new Form_Option();
+            form_Option.ShowDialog(this);
+            form_Option.Dispose();
         }
 
 
