@@ -110,26 +110,20 @@ namespace GathererTimeTable {
 
         }
 
-        [DllImport("winmm.dll",CharSet = CharSet.Auto)]
-        private static extern int mciSendString(string command,StringBuilder buffer,int bufferSize,IntPtr hwndCallback);
+
         private void _setOffAlarm() {
             switch(Settings.Default.AlarmType) {
                 case "None":
                     break;
                 case "SystemSound":
                     //同期再生する
-                    using(System.Media.SoundPlayer player = new System.Media.SoundPlayer(Properties.Resources.Chime)) {
-                        player.PlaySync();
+                    using(var player = new System.Media.SoundPlayer(Properties.Resources.Chime)) {
+                        player.Play();
                     } 
                     break;
                 case "UserDefinition":
-                    if(File.Exists(Settings.Default.SoundFilePath)) {
-                        string command = "open \"" + Settings.Default.SoundFilePath + "\" alias MediaFile";
-                        if(mciSendString(command,null,0,IntPtr.Zero) != 0) {
-                            return;
-                        }
-                        command = "play MediaFile";
-                        mciSendString(command,null,0,IntPtr.Zero);
+                    using(var player = new System.Media.SoundPlayer(Settings.Default.SoundFilePath)){
+                        player.Play();
                     }
                     break;
             }
