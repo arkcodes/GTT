@@ -63,6 +63,7 @@ namespace GathererTimeTable {
                     this.Controls["button" + j].Enabled = false;
                 }
                 Count++;
+                labelDebug.Text = DateTime.Now.ToShortTimeString();
             }
 
             if(_eTime.Substring(3,2) == "01") {
