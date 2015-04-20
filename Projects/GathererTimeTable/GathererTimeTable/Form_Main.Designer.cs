@@ -166,7 +166,7 @@
             // 
             this.button5.ImageIndex = 0;
             this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(297, 193);
+            this.button5.Location = new System.Drawing.Point(296, 193);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 23);
             this.button5.TabIndex = 16;
