@@ -1,7 +1,7 @@
 ﻿using ChreneLib.Controls.TextBoxes;
 
 namespace GathererTimeTable {
-    partial class Form_BotanistEditor {
+    partial class Form_MinerEditor {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -26,6 +26,10 @@ namespace GathererTimeTable {
         /// </summary>
         private void InitializeComponent() {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonComplete = new System.Windows.Forms.Button();
+            this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
             this.column1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.column2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -33,10 +37,6 @@ namespace GathererTimeTable {
             this.column5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonComplete = new System.Windows.Forms.Button();
-            this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,62 +62,6 @@ namespace GathererTimeTable {
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(784, 490);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // column1DataGridViewCheckBoxColumn
-            // 
-            this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
-            this.column1DataGridViewCheckBoxColumn.HeaderText = "有効/無効";
-            this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
-            this.column1DataGridViewCheckBoxColumn.Width = 90;
-            // 
-            // column2DataGridViewTextBoxColumn
-            // 
-            this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
-            this.column2DataGridViewTextBoxColumn.HeaderText = "Type";
-            this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
-            this.column2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // column3DataGridViewTextBoxColumn
-            // 
-            this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
-            this.column3DataGridViewTextBoxColumn.HeaderText = "採集時刻";
-            this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
-            this.column3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column3DataGridViewTextBoxColumn.Width = 95;
-            // 
-            // column4DataGridViewTextBoxColumn
-            // 
-            this.column4DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
-            this.column4DataGridViewTextBoxColumn.HeaderText = "採集物";
-            this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
-            this.column4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column4DataGridViewTextBoxColumn.Width = 61;
-            // 
-            // column5DataGridViewTextBoxColumn
-            // 
-            this.column5DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
-            this.column5DataGridViewTextBoxColumn.HeaderText = "採集場所";
-            this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
-            this.column5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column5DataGridViewTextBoxColumn.Width = 61;
-            // 
-            // column6DataGridViewTextBoxColumn
-            // 
-            this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
-            this.column6DataGridViewTextBoxColumn.HeaderText = "採集段数";
-            this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
-            this.column6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column6DataGridViewTextBoxColumn.Width = 80;
-            // 
-            // column7DataGridViewTextBoxColumn
-            // 
-            this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
-            this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
-            this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
             // 
             // buttonCancel
             // 
@@ -159,12 +103,68 @@ namespace GathererTimeTable {
             this.buttonCancelAllCheckBox.Location = new System.Drawing.Point(0, 490);
             this.buttonCancelAllCheckBox.Name = "buttonCancelAllCheckBox";
             this.buttonCancelAllCheckBox.Size = new System.Drawing.Size(105, 23);
-            this.buttonCancelAllCheckBox.TabIndex = 5;
+            this.buttonCancelAllCheckBox.TabIndex = 4;
             this.buttonCancelAllCheckBox.Text = "CheckBox全解除";
             this.buttonCancelAllCheckBox.UseVisualStyleBackColor = true;
             this.buttonCancelAllCheckBox.Click += new System.EventHandler(this.buttonCancelAllCheckBox_Click);
             // 
-            // Form_BotanistEditor
+            // column1DataGridViewCheckBoxColumn
+            // 
+            this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
+            this.column1DataGridViewCheckBoxColumn.HeaderText = "有効/無効";
+            this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
+            this.column1DataGridViewCheckBoxColumn.Width = 90;
+            // 
+            // column2DataGridViewTextBoxColumn
+            // 
+            this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
+            this.column2DataGridViewTextBoxColumn.HeaderText = "Type";
+            this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
+            this.column2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // column3DataGridViewTextBoxColumn
+            // 
+            this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
+            this.column3DataGridViewTextBoxColumn.HeaderText = "採集時刻";
+            this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
+            this.column3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column3DataGridViewTextBoxColumn.Width = 95;
+            // 
+            // column4DataGridViewTextBoxColumn
+            // 
+            this.column4DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
+            this.column4DataGridViewTextBoxColumn.HeaderText = "採集物";
+            this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
+            this.column4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column4DataGridViewTextBoxColumn.Width = 66;
+            // 
+            // column5DataGridViewTextBoxColumn
+            // 
+            this.column5DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
+            this.column5DataGridViewTextBoxColumn.HeaderText = "採集場所";
+            this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
+            this.column5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column5DataGridViewTextBoxColumn.Width = 78;
+            // 
+            // column6DataGridViewTextBoxColumn
+            // 
+            this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
+            this.column6DataGridViewTextBoxColumn.HeaderText = "採集段数";
+            this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
+            this.column6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column6DataGridViewTextBoxColumn.Width = 80;
+            // 
+            // column7DataGridViewTextBoxColumn
+            // 
+            this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
+            this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
+            this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
+            // 
+            // Form_MinerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +174,7 @@ namespace GathererTimeTable {
             this.Controls.Add(this.buttonComplete);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form_BotanistEditor";
+            this.Name = "Form_MinerEditor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Form_MineralEditor";
@@ -191,6 +191,7 @@ namespace GathererTimeTable {
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
         private CTextBox cTextBox_Filter;
+        private System.Windows.Forms.Button buttonCancelAllCheckBox;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3DataGridViewTextBoxColumn;
@@ -198,6 +199,5 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridViewTextBoxColumn column5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column6DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button buttonCancelAllCheckBox;
     }
 }

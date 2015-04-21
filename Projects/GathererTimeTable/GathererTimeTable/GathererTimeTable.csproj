@@ -55,11 +55,17 @@
     <Compile Include="Form_BotanistEditor.Designer.cs">
       <DependentUpon>Form_BotanistEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_MineralEditor.cs">
+    <Compile Include="Form_FisherEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_MineralEditor.Designer.cs">
-      <DependentUpon>Form_MineralEditor.cs</DependentUpon>
+    <Compile Include="Form_FisherEditor.Designer.cs">
+      <DependentUpon>Form_FisherEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MinerEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MinerEditor.Designer.cs">
+      <DependentUpon>Form_MinerEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>
@@ -85,8 +91,11 @@
     <EmbeddedResource Include="Form_BotanistEditor.resx">
       <DependentUpon>Form_BotanistEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_MineralEditor.resx">
-      <DependentUpon>Form_MineralEditor.cs</DependentUpon>
+    <EmbeddedResource Include="Form_FisherEditor.resx">
+      <DependentUpon>Form_FisherEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MinerEditor.resx">
+      <DependentUpon>Form_MinerEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>

@@ -208,6 +208,7 @@
             this.button8.Size = new System.Drawing.Size(30, 30);
             this.button8.TabIndex = 19;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.buttonFisher_Click);
             // 
             // labelDebug
             // 

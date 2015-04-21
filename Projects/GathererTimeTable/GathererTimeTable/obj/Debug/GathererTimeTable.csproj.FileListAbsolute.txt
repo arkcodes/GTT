@@ -17,7 +17,6 @@ E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\Gather
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.csproj.GenerateResource.Cache
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.exe
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.pdb
-E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_MineralEditor.resources
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe.config
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.exe
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\bin\Debug\GathererTimeTable.pdb
@@ -32,3 +31,5 @@ E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\Gather
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_BotanistEditor.resources
 C:\Users\shinkai_ch\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Option.resources
 E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_Option.resources
+E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_FisherEditor.resources
+E:\ACLibrary\OneDrive\Development\Visual Studio\Source\Repos\GTT\Projects\GathererTimeTable\GathererTimeTable\obj\Debug\GathererTimeTable.Form_MinerEditor.resources

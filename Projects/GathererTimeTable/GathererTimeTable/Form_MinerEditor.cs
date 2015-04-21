@@ -13,9 +13,9 @@ using GathererTimeTable.IO.Tool;
 
 
 namespace GathererTimeTable {
-    public partial class Form_MineralEditor : Form {
+    public partial class Form_MinerEditor : Form {
         Form_Main _form_Main = new Form_Main();
-        public Form_MineralEditor(Form_Main _Form_Main) {
+        public Form_MinerEditor(Form_Main _Form_Main) {
             _form_Main = _Form_Main;
             InitializeComponent();
         }
@@ -32,6 +32,12 @@ namespace GathererTimeTable {
 
         private void buttonCancel_Click(object sender,EventArgs e) {
             Close();
+        }
+
+        private void buttonCancelAllCheckBox_Click(object sender,EventArgs e) {
+            for(int i = 0;i < dataGridView1.RowCount;i++) {
+                dataGridView1[0,i].Value = false;
+            }
         }
 
 
