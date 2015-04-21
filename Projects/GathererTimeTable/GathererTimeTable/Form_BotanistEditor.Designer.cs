@@ -26,9 +26,6 @@ namespace GathererTimeTable {
         /// </summary>
         private void InitializeComponent() {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonComplete = new System.Windows.Forms.Button();
-            this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.column1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.column2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,6 +33,9 @@ namespace GathererTimeTable {
             this.column5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonComplete = new System.Windows.Forms.Button();
+            this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,62 @@ namespace GathererTimeTable {
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(784, 490);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // column1DataGridViewCheckBoxColumn
+            // 
+            this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
+            this.column1DataGridViewCheckBoxColumn.HeaderText = "有効/無効";
+            this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
+            this.column1DataGridViewCheckBoxColumn.Width = 90;
+            // 
+            // column2DataGridViewTextBoxColumn
+            // 
+            this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
+            this.column2DataGridViewTextBoxColumn.HeaderText = "Type";
+            this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
+            this.column2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // column3DataGridViewTextBoxColumn
+            // 
+            this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
+            this.column3DataGridViewTextBoxColumn.HeaderText = "採集時刻";
+            this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
+            this.column3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column3DataGridViewTextBoxColumn.Width = 95;
+            // 
+            // column4DataGridViewTextBoxColumn
+            // 
+            this.column4DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
+            this.column4DataGridViewTextBoxColumn.HeaderText = "採集物";
+            this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
+            this.column4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column4DataGridViewTextBoxColumn.Width = 61;
+            // 
+            // column5DataGridViewTextBoxColumn
+            // 
+            this.column5DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
+            this.column5DataGridViewTextBoxColumn.HeaderText = "採集場所";
+            this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
+            this.column5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column5DataGridViewTextBoxColumn.Width = 61;
+            // 
+            // column6DataGridViewTextBoxColumn
+            // 
+            this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
+            this.column6DataGridViewTextBoxColumn.HeaderText = "採集段数";
+            this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
+            this.column6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column6DataGridViewTextBoxColumn.Width = 80;
+            // 
+            // column7DataGridViewTextBoxColumn
+            // 
+            this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
+            this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
+            this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
             // 
             // buttonCancel
             // 
@@ -97,62 +153,6 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
-            // 
-            // column1DataGridViewCheckBoxColumn
-            // 
-            this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
-            this.column1DataGridViewCheckBoxColumn.HeaderText = "有効/無効";
-            this.column1DataGridViewCheckBoxColumn.Name = "column1DataGridViewCheckBoxColumn";
-            this.column1DataGridViewCheckBoxColumn.Width = 90;
-            // 
-            // column2DataGridViewTextBoxColumn
-            // 
-            this.column2DataGridViewTextBoxColumn.DataPropertyName = "Column2";
-            this.column2DataGridViewTextBoxColumn.HeaderText = "Type";
-            this.column2DataGridViewTextBoxColumn.Name = "column2DataGridViewTextBoxColumn";
-            this.column2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // column3DataGridViewTextBoxColumn
-            // 
-            this.column3DataGridViewTextBoxColumn.DataPropertyName = "Column3";
-            this.column3DataGridViewTextBoxColumn.HeaderText = "採集時刻";
-            this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
-            this.column3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column3DataGridViewTextBoxColumn.Width = 95;
-            // 
-            // column4DataGridViewTextBoxColumn
-            // 
-            this.column4DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column4DataGridViewTextBoxColumn.DataPropertyName = "Column4";
-            this.column4DataGridViewTextBoxColumn.HeaderText = "採集物";
-            this.column4DataGridViewTextBoxColumn.Name = "column4DataGridViewTextBoxColumn";
-            this.column4DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column4DataGridViewTextBoxColumn.Width = 66;
-            // 
-            // column5DataGridViewTextBoxColumn
-            // 
-            this.column5DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column5DataGridViewTextBoxColumn.DataPropertyName = "Column5";
-            this.column5DataGridViewTextBoxColumn.HeaderText = "採集場所";
-            this.column5DataGridViewTextBoxColumn.Name = "column5DataGridViewTextBoxColumn";
-            this.column5DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column5DataGridViewTextBoxColumn.Width = 78;
-            // 
-            // column6DataGridViewTextBoxColumn
-            // 
-            this.column6DataGridViewTextBoxColumn.DataPropertyName = "Column6";
-            this.column6DataGridViewTextBoxColumn.HeaderText = "採集段数";
-            this.column6DataGridViewTextBoxColumn.Name = "column6DataGridViewTextBoxColumn";
-            this.column6DataGridViewTextBoxColumn.ReadOnly = true;
-            this.column6DataGridViewTextBoxColumn.Width = 80;
-            // 
-            // column7DataGridViewTextBoxColumn
-            // 
-            this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
-            this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
-            this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
             // 
             // buttonCancelAllCheckBox
             // 
