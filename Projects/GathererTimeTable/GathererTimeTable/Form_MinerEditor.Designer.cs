@@ -1,7 +1,7 @@
 ﻿using ChreneLib.Controls.TextBoxes;
 
 namespace GathererTimeTable {
-    partial class Form_BotanistEditor {
+    partial class Form_MinerEditor {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,6 +29,7 @@ namespace GathererTimeTable {
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonComplete = new System.Windows.Forms.Button();
             this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
             this.column1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.column2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,7 +37,6 @@ namespace GathererTimeTable {
             this.column5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +98,16 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
+            // buttonCancelAllCheckBox
+            // 
+            this.buttonCancelAllCheckBox.Location = new System.Drawing.Point(0, 490);
+            this.buttonCancelAllCheckBox.Name = "buttonCancelAllCheckBox";
+            this.buttonCancelAllCheckBox.Size = new System.Drawing.Size(105, 23);
+            this.buttonCancelAllCheckBox.TabIndex = 4;
+            this.buttonCancelAllCheckBox.Text = "CheckBox全解除";
+            this.buttonCancelAllCheckBox.UseVisualStyleBackColor = true;
+            this.buttonCancelAllCheckBox.Click += new System.EventHandler(this.buttonCancelAllCheckBox_Click);
+            // 
             // column1DataGridViewCheckBoxColumn
             // 
             this.column1DataGridViewCheckBoxColumn.DataPropertyName = "Column1";
@@ -154,17 +164,7 @@ namespace GathererTimeTable {
             this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
             this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
             // 
-            // buttonCancelAllCheckBox
-            // 
-            this.buttonCancelAllCheckBox.Location = new System.Drawing.Point(0, 490);
-            this.buttonCancelAllCheckBox.Name = "buttonCancelAllCheckBox";
-            this.buttonCancelAllCheckBox.Size = new System.Drawing.Size(105, 23);
-            this.buttonCancelAllCheckBox.TabIndex = 5;
-            this.buttonCancelAllCheckBox.Text = "CheckBox全解除";
-            this.buttonCancelAllCheckBox.UseVisualStyleBackColor = true;
-            this.buttonCancelAllCheckBox.Click += new System.EventHandler(this.buttonCancelAllCheckBox_Click);
-            // 
-            // Form_BotanistEditor
+            // Form_MinerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +174,7 @@ namespace GathererTimeTable {
             this.Controls.Add(this.buttonComplete);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form_BotanistEditor";
+            this.Name = "Form_MinerEditor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Form_MineralEditor";
@@ -191,6 +191,7 @@ namespace GathererTimeTable {
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
         private CTextBox cTextBox_Filter;
+        private System.Windows.Forms.Button buttonCancelAllCheckBox;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3DataGridViewTextBoxColumn;
@@ -198,6 +199,5 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridViewTextBoxColumn column5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column6DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button buttonCancelAllCheckBox;
     }
 }

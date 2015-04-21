@@ -14,8 +14,7 @@ namespace GathererTimeTable {
     public partial class Form_Main : Form {
         public bool FlagAlarmInitialAttempt { get; set; }
         public bool TemporaryMute { get; set; }
-        HashSet<string> _minerTimeSet = new HashSet<string>();
-        HashSet<string> _botanistTimeSet = new HashSet<string>();
+        HashSet<string> _TimeSet = new HashSet<string>();
 
         List<string> _listButtonText = new List<string>();
         List<string> _listLabelText = new List<string>();
@@ -27,8 +26,10 @@ namespace GathererTimeTable {
 
         private void Form_Main_Load(object sender,System.EventArgs e) {
             labelTimeNow.Text = Eorzea_Time.GetTimeAsString();
-            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_minerTimeSet);
-            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_botanistTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_TimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_TimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("FisherCollection.csv",_TimeSet);
+
 
         }
         private void timerSec_Tick(object sender,System.EventArgs e) {
@@ -36,12 +37,14 @@ namespace GathererTimeTable {
             string _eTime = Eorzea_Time.GetTimeAsString();
             labelTimeNow.Text = _eTime;
             //その時間での初回実行確認、採掘師及び園芸師でのリストにアイテム登録があるかどうかの確認
-            if(FlagAlarmInitialAttempt && (_minerTimeSet.Contains(_eTime) || _botanistTimeSet.Contains(_eTime))) {
+            if(FlagAlarmInitialAttempt && (_TimeSet.Contains(_eTime))) {
                 _listButtonText.Clear();
                 _listLabelText.Clear();
                 int i = 0;
-                CsvIO.loadCSVToControlList(_eTime,"MinerCollection.csv",_listButtonText,_listLabelText,_minerTimeSet);
-                CsvIO.loadCSVToControlList(_eTime,"BotanistCollection.csv",_listButtonText,_listLabelText,_botanistTimeSet);
+                CsvIO.loadCSVToControlList(_eTime,"MinerCollection.csv",_listButtonText,_listLabelText,_TimeSet);
+                CsvIO.loadCSVToControlList(_eTime,"BotanistCollection.csv",_listButtonText,_listLabelText,_TimeSet);
+                CsvIO.loadCSVToControlList(_eTime,"FisherCollection.csv",_listButtonText,_listLabelText,_TimeSet);
+
 
                 foreach(var s in _listButtonText.Select((value,index) => new { value,index })) {
                     if(s.index < 4) {
@@ -77,23 +80,31 @@ namespace GathererTimeTable {
 
 
         private void _buttonMiner_Click(object sender,System.EventArgs e) {
-            var formMinerEditor = new Form_MineralEditor(this);
+            var formMinerEditor = new Form_MinerEditor(this);
             formMinerEditor.StartPosition = FormStartPosition.CenterParent;
             formMinerEditor.ShowDialog(this);
             formMinerEditor.Dispose();
-            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_minerTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("MinerCollection.csv",_TimeSet);
         }
         private void _buttonBotanist_Click(object sender,System.EventArgs e) {
             var formBotanistEditor = new Form_BotanistEditor(this);
             formBotanistEditor.StartPosition = FormStartPosition.CenterParent;
             formBotanistEditor.ShowDialog(this);
             formBotanistEditor.Dispose();
-            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_botanistTimeSet);
+            CsvIO.loadCSVIsCheckBoxTrue("BotanistCollection.csv",_TimeSet);
+        }
+        private void buttonFisher_Click(object sender,EventArgs e) {
+            Form_FisherEditor form_FisherEditor = new Form_FisherEditor(this);
+            form_FisherEditor.StartPosition = FormStartPosition.CenterParent;
+            form_FisherEditor.ShowDialog(this);
+            form_FisherEditor.Dispose();
+            CsvIO.loadCSVIsCheckBoxTrue("FisherCollection.csv",_TimeSet);
+
         }
 
         private void checkBox1_CheckedChanged(object sender,System.EventArgs e) {
             CheckBox cb = (CheckBox)sender;
-            this.TopMost = cb.Checked ? true : false;
+            this.TopMost = cb.Checked;
         }
 
         private void buttonOption_Click(object sender,EventArgs e) {
@@ -128,6 +139,7 @@ namespace GathererTimeTable {
                     break;
             }
         }
+
 
 
     }

@@ -24,7 +24,7 @@ namespace GathererTimeTable.IO.Tool {
                 }
 
                 //行頭コメント出力
-                writer.WriteLine("#0:bool:SetAlarm , 1:string:Type , 2:int:IntAlertTime , 3:string:StringAlertTime , 4:string:Collection , 5:string:Spot , 6:string:Step , 7:string:Note");
+                writer.WriteLine("#0:bool:アラームONOFF , 1:string:職 , 2:string:アラーム時刻(str) , 3:string:アイテムネーム , 4:string:採集場所 , 5:string:採集段数 , 6:string:ノート");
 
 
                 for(int i = 0;i < rowCount;i++) {
@@ -73,13 +73,26 @@ namespace GathererTimeTable.IO.Tool {
                 _IsTimeSet.Clear();
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
-                    if(row[0] == "True" && row[3] == _TimeString) {
-                        _LBCT.Add(row[4]);
-                        string _labelText = row[5] + " , " + row[6] + "\r\n" + row[7];
+                    if(row[0] == "True" && row[2] == _TimeString) {
+                        string _labelText;
+                        if(_FileName == "FisherCollection.csv") {
+                            //ボタン側のテキストリストにアイテム名、改行、採集時間 - 採集終了時間を追加
+                            _LBCT.Add(row[4] + "\r\n" + row[2] + " - " + row[3]);
+                            //ラベル側のテキストリストに"採集場所、採集段数、改行、メモを追加
+                            _labelText = row[5] + " / " + row[6] + " / " + row[7] + " / " + row[8] + "\r\n" + row[9];
+                            
+                        }
+                        else {
+                            //ボタン側のテキストリストにアイテム名を追加
+                            _LBCT.Add(row[3]);
+                            //ラベル側のテキストリストに"採集場所、採集段数、改行、メモを追加
+                            _labelText = row[4] + " , " + row[5] + "\r\n" + row[6];
+
+                        }
                         _LLCT.Add(_labelText);
 
                     }
-                    _IsTimeSet.Add(row[0] == "True" ? row[3] : null);
+                    _IsTimeSet.Add(row[0] == "True" ? row[2] : null);
                 }
             }
         }
@@ -94,7 +107,7 @@ namespace GathererTimeTable.IO.Tool {
                 _IsTimeSet.Clear();
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
-                    _IsTimeSet.Add(row[0] == "True" ? row[3] : null);
+                    _IsTimeSet.Add(row[0] == "True" ? row[2] : null);
                 }
             }
         }
