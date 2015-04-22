@@ -36,7 +36,7 @@ namespace GathererTimeTable {
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonComplete = new System.Windows.Forms.Button();
             this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.buttonCancelAllCheckBox = new System.Windows.Forms.Button();
+            this.checkBoxToggleCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@ namespace GathererTimeTable {
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(784, 490);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
             // column1DataGridViewCheckBoxColumn
             // 
@@ -84,6 +85,7 @@ namespace GathererTimeTable {
             this.column3DataGridViewTextBoxColumn.HeaderText = "採集時刻";
             this.column3DataGridViewTextBoxColumn.Name = "column3DataGridViewTextBoxColumn";
             this.column3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.column3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.column3DataGridViewTextBoxColumn.Width = 95;
             // 
             // column4DataGridViewTextBoxColumn
@@ -117,6 +119,7 @@ namespace GathererTimeTable {
             this.column7DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.column7DataGridViewTextBoxColumn.DataPropertyName = "Column7";
             this.column7DataGridViewTextBoxColumn.HeaderText = "メモ(編集可能列)";
+            this.column7DataGridViewTextBoxColumn.MaxInputLength = 54;
             this.column7DataGridViewTextBoxColumn.Name = "column7DataGridViewTextBoxColumn";
             // 
             // buttonCancel
@@ -137,7 +140,7 @@ namespace GathererTimeTable {
             this.buttonComplete.Name = "buttonComplete";
             this.buttonComplete.Size = new System.Drawing.Size(138, 72);
             this.buttonComplete.TabIndex = 2;
-            this.buttonComplete.Text = "Complete";
+            this.buttonComplete.Text = "OK";
             this.buttonComplete.UseVisualStyleBackColor = true;
             this.buttonComplete.Click += new System.EventHandler(this.buttonComplete_Click);
             // 
@@ -154,22 +157,24 @@ namespace GathererTimeTable {
             this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
-            // buttonCancelAllCheckBox
+            // checkBoxToggleCheck
             // 
-            this.buttonCancelAllCheckBox.Location = new System.Drawing.Point(0, 490);
-            this.buttonCancelAllCheckBox.Name = "buttonCancelAllCheckBox";
-            this.buttonCancelAllCheckBox.Size = new System.Drawing.Size(105, 23);
-            this.buttonCancelAllCheckBox.TabIndex = 5;
-            this.buttonCancelAllCheckBox.Text = "CheckBox全解除";
-            this.buttonCancelAllCheckBox.UseVisualStyleBackColor = true;
-            this.buttonCancelAllCheckBox.Click += new System.EventHandler(this.buttonCancelAllCheckBox_Click);
+            this.checkBoxToggleCheck.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxToggleCheck.AutoSize = true;
+            this.checkBoxToggleCheck.Location = new System.Drawing.Point(0, 490);
+            this.checkBoxToggleCheck.Name = "checkBoxToggleCheck";
+            this.checkBoxToggleCheck.Size = new System.Drawing.Size(75, 22);
+            this.checkBoxToggleCheck.TabIndex = 7;
+            this.checkBoxToggleCheck.Text = "ALL On/Off";
+            this.checkBoxToggleCheck.UseVisualStyleBackColor = true;
+            this.checkBoxToggleCheck.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form_BotanistEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.buttonCancelAllCheckBox);
+            this.Controls.Add(this.checkBoxToggleCheck);
             this.Controls.Add(this.cTextBox_Filter);
             this.Controls.Add(this.buttonComplete);
             this.Controls.Add(this.buttonCancel);
@@ -177,8 +182,8 @@ namespace GathererTimeTable {
             this.Name = "Form_BotanistEditor";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Form_MineralEditor";
-            this.Load += new System.EventHandler(this.Form_Collection_Load);
+            this.Text = "追加・編集";
+            this.Load += new System.EventHandler(this.form_Collection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,6 +196,7 @@ namespace GathererTimeTable {
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonComplete;
         private CTextBox cTextBox_Filter;
+        private System.Windows.Forms.CheckBox checkBoxToggleCheck;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3DataGridViewTextBoxColumn;
@@ -198,6 +204,5 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridViewTextBoxColumn column5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column6DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button buttonCancelAllCheckBox;
     }
 }

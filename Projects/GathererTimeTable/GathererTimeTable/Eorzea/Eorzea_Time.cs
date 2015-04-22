@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GathererTimeTable.FFXIV.Tool {
+namespace GathererTimeTable {
     class Eorzea_Time {
         //コンストラクタ
         public Eorzea_Time() {
@@ -8,39 +8,37 @@ namespace GathererTimeTable.FFXIV.Tool {
         }
 
         /// <summary>
-        /// を取得する
+        /// エオルゼア時間hh:mmの形でを取得する
         /// </summary>
         /// <returns></returns>
         public static string GetTimeAsString() {
-            ulong eSecond;
-            ulong eMinute;
-            ulong eHour;
-            ulong diff;
-            DateTime d = new DateTime(2013,7,14,0,0,0);
+            ulong second;
+            ulong minute;
+            ulong hour;
+            ulong elapsedTime;
+            DateTime baseTime = new DateTime(2013,7,14,0,0,0);
             //時刻の差分を秒表示
-            diff = (ulong)(DateTime.Now - d).TotalSeconds;
+            elapsedTime = (ulong)(DateTime.Now - baseTime).TotalSeconds;
             //地球時間の1440/70倍のスピードでエオルゼア時間は進む
-            ulong num = diff * 1440uL / 70uL;
+            ulong restTime = elapsedTime * 1440uL / 70uL;
             //差分秒を60で割った余りがエオルゼア秒となる
-
-            eSecond = num % 60uL;
+            second = restTime % 60uL;
             //差分秒から端数秒となるエオルゼア秒を引く
-            num -= eSecond;
+            restTime -= second;
             //差分秒を差分分に変換
-            num /= 60uL;
+            restTime /= 60uL;
+            minute = restTime % 60uL;
+            restTime -= minute;
+            restTime /= 60uL;
 
-            eMinute = num % 60uL;
-            num -= eMinute;
-            num /= 60uL;
-
-            eHour = num % 24uL;
+            hour = restTime % 24uL;
 
             //Hour:Minuteで出力。右寄り0埋めで出力。
-
             return string.Concat(new string[]{
-                eHour.ToString("D2"),":",
-                eMinute.ToString("D2")
+                hour.ToString("D2"),":",
+                minute.ToString("D2")
             });
         }// M GetTimeAsString
+
     }
 }

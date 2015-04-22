@@ -24,7 +24,7 @@ namespace GathererTimeTable.IO.Tool {
                 }
 
                 //行頭コメント出力
-                writer.WriteLine("#0:bool:アラームONOFF , 1:string:職 , 2:string:アラーム時刻(str) , 3:string:アイテムネーム , 4:string:採集場所 , 5:string:採集段数 , 6:string:ノート");
+                //writer.WriteLine("#0:bool:アラームONOFF , 1:string:職 , 2:string:アラーム時刻(str) , 3:string:アイテムネーム , 4:string:採集場所 , 5:string:採集段数 , 6:string:ノート");
 
 
                 for(int i = 0;i < rowCount;i++) {
@@ -44,7 +44,7 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void loadCSVToDataGridView(DataGridView _DataGridView,string _FileName) {
+        public static void LoadCSVToDataGridView(DataGridView _DataGridView,string _FileName) {
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -63,48 +63,44 @@ namespace GathererTimeTable.IO.Tool {
             }
         }
 
-        public static void loadCSVToControlList(string _TimeString,string _FileName,List<string> _LBCT,List<string> _LLCT,HashSet<string> _IsTimeSet) {
+        public static void LoadCSVToControlList(string _TimeString,string _FileName,List<string> _ListButtonText,List<string> _ListNoteText,HashSet<string> _TimeSet) {
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
                 parser.HasFieldsEnclosedInQuotes = true; //""コメント内のコンマは無視する
                 parser.CommentTokens = new string[] { "#" }; //#から始まる行をコメント行として設定
 
-                _IsTimeSet.Clear();
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
                     if(row[0] == "True" && row[2] == _TimeString) {
-                        string _labelText;
                         if(_FileName == "FisherCollection.csv") {
                             //ボタン側のテキストリストにアイテム名、改行、採集時間 - 採集終了時間を追加
-                            _LBCT.Add(row[4] + "\r\n" + row[2] + " - " + row[3]);
-                            //ラベル側のテキストリストに"採集場所、採集段数、改行、メモを追加
-                            _labelText = row[5] + " / " + row[6] + " / " + row[7] + " / " + row[8] + "\r\n" + row[9];
-                            
+                            string _buttonText = row[4] + " / " + row[2] + " - " + row[3] + "\r\n" + row[5] + " / " + row[6] + " / " + row[7] + " / " + row[8];
+                            //row[9](ノート)が空で無いのなら / + row[9]を結合、空なら何もしない。
+                            _buttonText += (row[9] != "") ? " / " + row[9] : "";
+                            _ListButtonText.Add(string.Join("/",_buttonText));
+                            _ListNoteText.Add(row[6] + " / " + row[7] + " / " + row[8] + "\r\n" + row[9]);
                         }
                         else {
                             //ボタン側のテキストリストにアイテム名を追加
-                            _LBCT.Add(row[3]);
-                            //ラベル側のテキストリストに"採集場所、採集段数、改行、メモを追加
-                            _labelText = row[4] + " , " + row[5] + "\r\n" + row[6];
-
+                            string _buttonText = row[3] + " / " + row[2] + "\r\n" + row[4] + " / " + row[5];
+                            _buttonText += (row[6] != "") ? " / " + row[6] : "";
+                            _ListButtonText.Add(string.Join("/",_buttonText));
+                            _ListNoteText.Add(row[6]);
                         }
-                        _LLCT.Add(_labelText);
-
                     }
-                    _IsTimeSet.Add(row[0] == "True" ? row[2] : null);
+                    _TimeSet.Add(row[0] == "True" ? row[2] : null);
                 }
             }
         }
 
-        public static void loadCSVIsCheckBoxTrue(string _FileName,HashSet<string> _IsTimeSet) {
+        public static void LoadCSVIsCheckBoxTrue(string _FileName,HashSet<string> _IsTimeSet) {
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
                 parser.HasFieldsEnclosedInQuotes = true; //""コメント内のコンマは無視する
                 parser.CommentTokens = new string[] { "#" }; //#から始まる行をコメント行として設定
 
-                _IsTimeSet.Clear();
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
                     _IsTimeSet.Add(row[0] == "True" ? row[2] : null);

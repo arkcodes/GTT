@@ -73,7 +73,7 @@
     <Compile Include="Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="FFXIV.Tool\Eorzea_Time.cs" />
+    <Compile Include="Eorzea\Eorzea_Time.cs" />
     <Compile Include="Form_Option.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,8 +131,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Chime.wav" />
-    <None Include="Resources\chime13.wav" />
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chime.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
