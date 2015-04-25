@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GathererTimeTable {
+namespace GathererTimetable {
     static class Program {
         [STAThread]
         static void Main() {

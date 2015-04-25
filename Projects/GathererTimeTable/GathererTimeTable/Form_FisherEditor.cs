@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using GathererTimeTable.IO.Tool;
+using GathererTimetable.IO.Tool;
 
 
-
-namespace GathererTimeTable {
+namespace GathererTimetable {
     public partial class Form_FisherEditor : Form {
         Form_Main _form_Main = new Form_Main();
         public Form_FisherEditor(Form_Main _Form_Main) {

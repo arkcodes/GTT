@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GathererTimeTable {
+namespace GathererTimetable {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -44,6 +44,18 @@ namespace GathererTimeTable {
             }
             set {
                 this["SoundFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AlarmDelayType {
+            get {
+                return ((string)(this["AlarmDelayType"]));
+            }
+            set {
+                this["AlarmDelayType"] = value;
             }
         }
     }

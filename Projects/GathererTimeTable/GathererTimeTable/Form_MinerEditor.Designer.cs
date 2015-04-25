@@ -1,6 +1,5 @@
-﻿using ChreneLib.Controls.TextBoxes;
-
-namespace GathererTimeTable {
+﻿
+namespace GathererTimetable {
     partial class Form_MinerEditor {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +34,6 @@ namespace GathererTimeTable {
             this.column7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.cTextBox_Filter = new ChreneLib.Controls.TextBoxes.CTextBox();
             this.checkBoxToggleSet = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -140,22 +138,9 @@ namespace GathererTimeTable {
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(138, 72);
             this.buttonOK.TabIndex = 2;
-            this.buttonOK.Text = "Complete";
+            this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
-            // 
-            // cTextBox_Filter
-            // 
-            this.cTextBox_Filter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cTextBox_Filter.Location = new System.Drawing.Point(0, 490);
-            this.cTextBox_Filter.Name = "cTextBox_Filter";
-            this.cTextBox_Filter.Size = new System.Drawing.Size(508, 19);
-            this.cTextBox_Filter.TabIndex = 3;
-            this.cTextBox_Filter.Visible = false;
-            this.cTextBox_Filter.WaterMark = "検索フィルター";
-            this.cTextBox_Filter.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.cTextBox_Filter.WaterMarkFont = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.cTextBox_Filter.WaterMarkForeColor = System.Drawing.Color.DimGray;
             // 
             // checkBoxToggleSet
             // 
@@ -175,7 +160,6 @@ namespace GathererTimeTable {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.checkBoxToggleSet);
-            this.Controls.Add(this.cTextBox_Filter);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.dataGridView1);
@@ -195,7 +179,6 @@ namespace GathererTimeTable {
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
-        private CTextBox cTextBox_Filter;
         private System.Windows.Forms.CheckBox checkBoxToggleSet;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2DataGridViewTextBoxColumn;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 
-namespace GathererTimeTable.IO.Tool {
+namespace GathererTimetable.IO.Tool {
     class CsvIO {
 
         public CsvIO() {
@@ -13,6 +13,7 @@ namespace GathererTimeTable.IO.Tool {
         }
 
         public static void SaveDataTableToCSV(DataGridView _DataGridView,string _FileName) {
+            _FileName = System.IO.Directory.GetCurrentDirectory() + "\\Collection\\" + _FileName;
             // 保存用のファイルを開く
             using(StreamWriter writer = new StreamWriter(_FileName,false,Encoding.GetEncoding("shift_jis"))) {
 
@@ -45,6 +46,7 @@ namespace GathererTimeTable.IO.Tool {
         }
 
         public static void LoadCSVToDataGridView(DataGridView _DataGridView,string _FileName) {
+            _FileName = System.IO.Directory.GetCurrentDirectory() + "\\Collection\\" + _FileName;
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -64,6 +66,7 @@ namespace GathererTimeTable.IO.Tool {
         }
 
         public static void LoadCSVToControlList(string _TimeString,string _FileName,List<string> _ListButtonText,List<string> _ListNoteText,HashSet<string> _TimeSet) {
+            _FileName = System.IO.Directory.GetCurrentDirectory() + "\\Collection\\" + _FileName;
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -73,19 +76,24 @@ namespace GathererTimeTable.IO.Tool {
                 while(!parser.EndOfData) {
                     string[] row = parser.ReadFields(); // 1行読み込み
                     if(row[0] == "True" && row[2] == _TimeString) {
-                        if(_FileName == "FisherCollection.csv") {
+                        if(_FileName == Directory.GetCurrentDirectory() + "\\Collection\\" + "FisherCollection.csv") {
                             //ボタン側のテキストリストにアイテム名、改行、採集時間 - 採集終了時間を追加
                             string _buttonText = row[4] + " / " + row[2] + " - " + row[3] + "\r\n" + row[5] + " / " + row[6] + " / " + row[7] + " / " + row[8];
                             //row[9](ノート)が空で無いのなら / + row[9]を結合、空なら何もしない。
                             _buttonText += (row[9] != "") ? " / " + row[9] : "";
-                            _ListButtonText.Add(string.Join("/",_buttonText));
-                            _ListNoteText.Add(row[6] + " / " + row[7] + " / " + row[8] + "\r\n" + row[9]);
+                            _ListButtonText.Add(_buttonText);
+                            //全角27文字以上の場合は一行として出力
+                            if(System.Text.Encoding.GetEncoding(932).GetByteCount(row[6] + " / " + row[7] + " / " + row[8]) > 54 && row[9] != "") {
+                                _ListNoteText.Add(row[6] + " / " + row[7] + " / " + row[8] + " / " + row[9]);
+                            }
+                            else _ListNoteText.Add(row[6] + " / " + row[7] + " / " + row[8] + "\r\n" + row[9]);
+
                         }
                         else {
                             //ボタン側のテキストリストにアイテム名を追加
                             string _buttonText = row[3] + " / " + row[2] + "\r\n" + row[4] + " / " + row[5];
                             _buttonText += (row[6] != "") ? " / " + row[6] : "";
-                            _ListButtonText.Add(string.Join("/",_buttonText));
+                            _ListButtonText.Add(_buttonText);
                             _ListNoteText.Add(row[6]);
                         }
                     }
@@ -95,6 +103,7 @@ namespace GathererTimeTable.IO.Tool {
         }
 
         public static void LoadCSVIsCheckBoxTrue(string _FileName,HashSet<string> _IsTimeSet) {
+            _FileName = System.IO.Directory.GetCurrentDirectory() + "\\Collection\\" + _FileName;
             using(TextFieldParser parser = new TextFieldParser(_FileName,Encoding.GetEncoding("Shift_JIS"))) {
                 parser.TextFieldType = FieldType.Delimited;
                 parser.SetDelimiters(","); // 区切り文字はコンマ
@@ -107,5 +116,7 @@ namespace GathererTimeTable.IO.Tool {
                 }
             }
         }
+
     }
+
 }

@@ -8,11 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using GathererTimeTable.IO.Tool;
+using GathererTimetable.IO.Tool;
 
 
-
-namespace GathererTimeTable {
+namespace GathererTimetable {
     public partial class Form_MinerEditor : Form {
         Form_Main _form_Main = new Form_Main();
         public Form_MinerEditor(Form_Main _Form_Main) {

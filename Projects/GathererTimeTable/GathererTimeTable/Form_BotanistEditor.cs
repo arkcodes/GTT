@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using GathererTimeTable.IO.Tool;
+using GathererTimetable.IO.Tool;
 
 
-
-namespace GathererTimeTable {
+namespace GathererTimetable {
     public partial class Form_BotanistEditor : Form {
         Form_Main _form_Main = new Form_Main();
         public Form_BotanistEditor(Form_Main _Form_Main) {
@@ -15,7 +14,6 @@ namespace GathererTimeTable {
 
         private void form_Collection_Load(object sender,EventArgs e) {
             CsvIO.LoadCSVToDataGridView(dataGridView1,"BotanistCollection.csv");
-
         }
 
         private void buttonComplete_Click(object sender,EventArgs e) {

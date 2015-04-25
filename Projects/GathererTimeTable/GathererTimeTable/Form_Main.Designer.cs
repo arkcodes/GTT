@@ -1,4 +1,4 @@
-﻿namespace GathererTimeTable {
+﻿namespace GathererTimetable {
     partial class Form_Main {
         /// <summary>
         /// Required designer variable.
@@ -40,13 +40,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.labelInfomation = new System.Windows.Forms.Label();
+            this.checkBoxFlashTaskbar = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTimeNow
             // 
             this.labelTimeNow.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labelTimeNow.Location = new System.Drawing.Point(0, 0);
+            this.labelTimeNow.Location = new System.Drawing.Point(0, -1);
             this.labelTimeNow.Margin = new System.Windows.Forms.Padding(0);
             this.labelTimeNow.Name = "labelTimeNow";
             this.labelTimeNow.Size = new System.Drawing.Size(85, 31);
@@ -64,7 +65,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelTimeNow);
-            this.panel1.Location = new System.Drawing.Point(9, 9);
+            this.panel1.Location = new System.Drawing.Point(9, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(69, 30);
@@ -74,10 +75,10 @@
             // 
             this.button4.Enabled = false;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(9, 158);
+            this.button4.Location = new System.Drawing.Point(9, 154);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(313, 32);
-            this.button4.TabIndex = 10;
+            this.button4.TabIndex = 3;
             this.button4.Tag = "3";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
@@ -86,10 +87,10 @@
             // checkBoxAlwaysOnTop
             // 
             this.checkBoxAlwaysOnTop.AutoSize = true;
-            this.checkBoxAlwaysOnTop.Location = new System.Drawing.Point(81, 9);
+            this.checkBoxAlwaysOnTop.Location = new System.Drawing.Point(81, 5);
             this.checkBoxAlwaysOnTop.Name = "checkBoxAlwaysOnTop";
             this.checkBoxAlwaysOnTop.Size = new System.Drawing.Size(94, 16);
-            this.checkBoxAlwaysOnTop.TabIndex = 15;
+            this.checkBoxAlwaysOnTop.TabIndex = 8;
             this.checkBoxAlwaysOnTop.Text = "AlwaysOnTop";
             this.checkBoxAlwaysOnTop.UseVisualStyleBackColor = true;
             this.checkBoxAlwaysOnTop.CheckedChanged += new System.EventHandler(this.checkBoxTopMost_CheckedChanged);
@@ -98,10 +99,10 @@
             // 
             this.button5.ImageIndex = 0;
             this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(299, 193);
+            this.button5.Location = new System.Drawing.Point(299, 189);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(23, 23);
-            this.button5.TabIndex = 16;
+            this.button5.TabIndex = 7;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.buttonOption_Click);
             // 
@@ -114,40 +115,40 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(218, 9);
+            this.button6.Location = new System.Drawing.Point(221, 5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(30, 30);
-            this.button6.TabIndex = 17;
+            this.button6.TabIndex = 4;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.buttonMiner_Click);
             // 
             // button7
             // 
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(254, 9);
+            this.button7.Location = new System.Drawing.Point(257, 5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(30, 30);
-            this.button7.TabIndex = 18;
+            this.button7.TabIndex = 5;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.buttonBotanist_Click);
             // 
             // button8
             // 
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.Location = new System.Drawing.Point(290, 9);
+            this.button8.Location = new System.Drawing.Point(291, 5);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(30, 30);
-            this.button8.TabIndex = 19;
+            this.button8.TabIndex = 6;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.buttonFisher_Click);
             // 
             // checkBoxMute
             // 
             this.checkBoxMute.AutoSize = true;
-            this.checkBoxMute.Location = new System.Drawing.Point(81, 25);
+            this.checkBoxMute.Location = new System.Drawing.Point(81, 21);
             this.checkBoxMute.Name = "checkBoxMute";
             this.checkBoxMute.Size = new System.Drawing.Size(49, 16);
-            this.checkBoxMute.TabIndex = 21;
+            this.checkBoxMute.TabIndex = 9;
             this.checkBoxMute.Text = "Mute";
             this.checkBoxMute.UseVisualStyleBackColor = true;
             this.checkBoxMute.CheckedChanged += new System.EventHandler(this.checkBoxMute_CheckedChanged);
@@ -156,10 +157,10 @@
             // 
             this.button3.Enabled = false;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(9, 120);
+            this.button3.Location = new System.Drawing.Point(9, 116);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(313, 32);
-            this.button3.TabIndex = 9;
+            this.button3.TabIndex = 2;
             this.button3.Tag = "2";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
@@ -169,10 +170,10 @@
             // 
             this.button2.Enabled = false;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(9, 82);
+            this.button2.Location = new System.Drawing.Point(9, 78);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(313, 32);
-            this.button2.TabIndex = 8;
+            this.button2.TabIndex = 1;
             this.button2.Tag = "1";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
@@ -182,10 +183,10 @@
             // 
             this.button1.Enabled = false;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(9, 44);
+            this.button1.Location = new System.Drawing.Point(9, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(313, 32);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 0;
             this.button1.Tag = "0";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,17 +196,29 @@
             // labelInfomation
             // 
             this.labelInfomation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelInfomation.Location = new System.Drawing.Point(10, 192);
+            this.labelInfomation.Location = new System.Drawing.Point(10, 189);
             this.labelInfomation.Name = "labelInfomation";
             this.labelInfomation.Size = new System.Drawing.Size(284, 27);
             this.labelInfomation.TabIndex = 22;
             this.labelInfomation.Text = "ボタンを押下すると天気、釣餌、獲得力、メモがここへ表示されます";
+            // 
+            // checkBoxFlashTaskbar
+            // 
+            this.checkBoxFlashTaskbar.AutoSize = true;
+            this.checkBoxFlashTaskbar.Location = new System.Drawing.Point(128, 21);
+            this.checkBoxFlashTaskbar.Name = "checkBoxFlashTaskbar";
+            this.checkBoxFlashTaskbar.Size = new System.Drawing.Size(93, 16);
+            this.checkBoxFlashTaskbar.TabIndex = 10;
+            this.checkBoxFlashTaskbar.Text = "FlashTaskbar";
+            this.checkBoxFlashTaskbar.UseVisualStyleBackColor = true;
+            this.checkBoxFlashTaskbar.CheckedChanged += new System.EventHandler(this.checkBoxFlashTaskbar_CheckedChanged);
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 220);
+            this.Controls.Add(this.checkBoxFlashTaskbar);
             this.Controls.Add(this.labelInfomation);
             this.Controls.Add(this.checkBoxMute);
             this.Controls.Add(this.button8);
@@ -220,8 +233,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form_Main";
-            this.Text = "GathererTimeTable";
+            this.Text = "GathererTimetable";
             this.Load += new System.EventHandler(this.form_Main_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -246,5 +260,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelInfomation;
+        private System.Windows.Forms.CheckBox checkBoxFlashTaskbar;
     }
 }
